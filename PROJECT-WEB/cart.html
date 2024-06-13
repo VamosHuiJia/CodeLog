@@ -1,0 +1,158 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giỏ Hàng</title>
+    <link rel="stylesheet" href="cart.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    
+<div class="content">
+    <div class="cart-container">
+        <h1>SHOPPING CART</h1>
+        <button class="close-btn" onclick="goToHomePage()"><i class="fas fa-times"></i></button>
+    </div>
+        
+    <div class="table">    
+        <table class="cart-table">
+        <thead>
+            <tr>
+                <th>Product</th>
+                <th>Price</th>
+                <th>Quantity</th>
+                <th>Total</th>
+                <th>Remove</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td></td>
+            </tr>
+        </tbody>
+        </table>
+    </div>
+    <div class="cover">
+        <div class="cart-total">
+            <p>Subtotal<span id="subtotal">0$</span></p>
+            <p>Tax <span id="tax">5%</span></p>
+            <p>Total <span id="total">0$</span></p>
+            <button class="checkout-btn" onclick="goToCheckout()">Process to checkout</button>
+        </div>
+    </div>
+    <script>
+        function goToCheckout() {
+            window.location.href = "thanhtoan.html"; 
+        }
+    </script>
+        
+    </div>
+</div>
+
+    <script>
+        function goToHomePage() {
+            window.location.href = "index.html"; 
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const cartTableBody = document.querySelector('.cart-table tbody');
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+            // Log the cart to check if it's loading correctly
+            console.log('Cart loaded from Local Storage:', cart);
+
+            function renderCart() {
+                cartTableBody.innerHTML = '';
+                let subtotal = 0;
+
+                cart.forEach(item => {
+                    const row = document.createElement('tr');
+
+                    row.innerHTML = `
+                        <td class="cart-product">
+                            <img src="${item.img}" alt="${item.name}">
+                            <span>${item.name}</span>
+                        </td>
+                        <td>${item.price}</td>
+                        <td>
+                            <input type="number" value="${item.quantity}" min="1" data-product-name="${item.name}" style="width: 44px; text-align:center ; height:25px ; border-radius:15px; border:1px solid grey; font-size:14px;">
+                        </td>
+                        <td>${(parseFloat(item.price.replace(/[^\d.]/g, '').replace('$', '')) * item.quantity).toFixed(2)}$</td>
+                        <td>
+                            <button class="remove-btn" data-product-name="${item.name}"><i class="fa-solid fa-trash-can " ></i></button>
+                        </td>
+                    `;
+
+                    cartTableBody.appendChild(row);
+                    if (item.price) {
+                        subtotal += parseFloat(item.price.replace(/[^\d.]/g, '')) * item.quantity;
+                    }
+
+                });
+
+                const tax = 5;
+                const total = subtotal - tax*subtotal/100;
+
+                document.getElementById('subtotal').innerText = subtotal.toFixed(2) + '$';
+                document.getElementById('tax').innerText = tax.toFixed(0) + '%';
+                document.getElementById('total').innerText = total.toFixed(2) + '$';
+
+            addEventListeners();
+
+                // document.querySelector('.cart-total p').innerText = total.toLocaleString('vi-VN') + 'đ';
+                // addEventListeners();
+            }
+
+            function addEventListeners() {
+                const quantityInputs = document.querySelectorAll('input[type="number"]');
+                const removeButtons = document.querySelectorAll('.remove-btn');
+
+                quantityInputs.forEach(input => {
+                    input.addEventListener('change', function() {
+                        const productName = this.getAttribute('data-product-name');
+                        const newQuantity = parseInt(this.value);
+                        if (newQuantity > 0) {
+                            updateQuantity(productName, newQuantity);
+                        } else {
+                            this.value = 1; // Đảm bảo số lượng không nhỏ hơn 1
+                            updateQuantity(productName, 1);
+                        }
+                    });
+                });
+
+                removeButtons.forEach(button => {
+                    button.addEventListener('click', function() {
+                        const productName = this.getAttribute('data-product-name');
+                        removeFromCart(productName);
+                    });
+                });
+            }
+
+            function updateQuantity(productName, newQuantity) {
+                cart = cart.map(item => {
+                    if (item.name === productName) {
+                        item.quantity = newQuantity;
+                    }
+                    return item;
+                });
+                localStorage.setItem('cart', JSON.stringify(cart));
+                renderCart();
+            }
+
+            function removeFromCart(productName) {
+                cart = cart.filter(item => item.name !== productName);
+                localStorage.setItem('cart', JSON.stringify(cart));
+                renderCart();
+            }
+
+            renderCart();
+        });
+
+        document.getElementsById('checkoutButton').addEventListener('click', function() {
+        window.location.href = "thanhtoan.html"; // Thay "checkout.html" bằng URL trang đích của bạn
+    });
+    </script> 
+</body>
+</html>

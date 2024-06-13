@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout Page</title>
+    <link rel="stylesheet" href="thanhtoan.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Checkout</h2>
+        <form id="checkoutForm">
+            <div class="checkout-column">
+                <h3>Shipping Information</h3>
+                <label for="name" class="checkout-column-label-shipping"> Your Full Name</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="address" class="checkout-column-label-shipping">Your Address</label>
+                <input type="text" id="address" name="address" required>
+
+                <label for="phone" class="checkout-column-label-shipping">Your Phone Number</label>
+                <input type="text" id="phone" name="phone" required>
+            </div>
+
+            <div class="divider"></div>
+
+            <div class="checkout-column">
+                <h3>Payment Method</h3>
+                <label class="checkout-column-label-payment">
+                    <input type="radio" name="paymentMethod" value="creditCard" required>
+                    Credit Card
+                </label>
+                <label class="checkout-column-label-payment">
+                    <input type="radio" name="paymentMethod" value="bankTransfer" required>
+                    Bank Transfer
+                </label>
+                <label class="checkout-column-label-payment">
+                    <input type="radio" name="paymentMethod" value="eWallet" required>
+                    E-Wallet (PayPal, MoMo, ZaloPay)
+                </label>
+                <label> 
+                    <input type="radio" name="paymentMethod" value="cod" required>
+                    Cash on Delivery (COD)
+                </label>
+
+                <div class="btn">
+                    <button type="submit"  class="cancel">Cancel</button>
+                    <button type="submit" class="submit">Submit</button>
+                </div>
+            </div>
+
+            
+        </form>
+    </div>
+    <script >
+        document.addEventListener('DOMContentLoaded', function() {
+    const checkoutForm = document.getElementById('checkoutForm');
+    const cancelButton = document.querySelector('.cancel');
+    const submitButton = document.querySelector('.submit');
+
+    // Handle form submission
+    checkoutForm.addEventListener('submit', function(event) {
+        event.preventDefault(); // Prevent the default form submission
+
+        const formData = new FormData(checkoutForm);
+        const data = Object.fromEntries(formData.entries());
+
+        console.log('Form Data:', data);
+
+        // Here, you can handle form submission, like sending data to the server
+        // For example, using fetch to send data to the server
+        // fetch('/submit', {
+        //     method: 'POST',
+        //     headers: {
+        //         'Content-Type': 'application/json'
+        //     },
+        //     body: JSON.stringify(data)
+        // }).then(response => response.json())
+        //   .then(data => console.log('Success:', data))
+        //   .catch((error) => console.error('Error:', error));
+
+        // Alert to show that form has been submitted (for demonstration purposes)
+        alert('Form submitted successfully!');
+    });
+
+    // Handle cancel button click
+    cancelButton.addEventListener('click', function(event) {
+        event.preventDefault(); // Prevent the default form submission
+        if (confirm('Are you sure you want to cancel?')) {
+            window.location.href = 'cart.html'; // Redirect to homepage or any other page
+        }
+    });
+});
+
+    </script>
+</body>
+</html>

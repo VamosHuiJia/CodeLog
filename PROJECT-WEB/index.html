@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TRANG CHỦ</title>
+    <link rel="stylesheet" href="indexstyle.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="index.js">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <header>
+        <div class="header__contain">
+            <div class="header__nav">
+                <div class="name">
+                    <nav>
+                        <ul>
+                            <li class="active-header"><a href="index.html">Home</a></li>
+                            <li><a href="product.html">Product</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                            <li><a href="aboutus.html">About us</a></li>
+                            <li><i class="fa-solid fa-user"></i><a href="login.html">Login</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+            <div class="header__body">
+                <!-- Search  -->
+                <div class="header__logo" style="background-image:url('logo2.png') ;">
+                    <p><span>.</span>Shop<span>House</span></p>
+                </div>
+                <div class="header__search ">
+                    <a href="product.html">
+                        <input type="text" placeholder="Search here (Go to Product)">
+                        <button>
+                            <a href="product.html"><i class="fa-solid fa-magnifying-glass"></i></a>
+                        </button>
+                    </a>
+                    <span class="car__shopping">
+                        <a href="cart.html"> <i class="fa-solid fa-cart-shopping"></i></a>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="slide-show-img">
+        <div class="slide-show">
+            <div class="list-images">
+                <div class="img" style="background-image:url('441387241_1006940824109353_4015047559073357076_n.jpg')"></div>
+                <div class="img" style="background-image: url('441441916_479622207854303_7106830705271754975_n.jpg  ');"></div>
+                <div class="img" style="background-image: url(441507721_1176483493475367_8078579292437295328_n.jpg);"></div>
+                <div class="img" style="background-image: url('448381266_1009377147527999_4518340600618714127_n.jpg');"></div>
+                <div class="img" style="background-image: url('441387241_1006940824109353_4015047559073357076_n.jpg');"></div>
+            </div>
+        </div>
+        <div class="btns">
+            <div class="btn-left btn"><i class='bx bx-chevron-left'></i></box-icon></div>
+            <div class="btn-right btn"><i class='bx bx-chevron-right'></i></box-icon></div>
+        </div>
+        <div class="index-images">
+            <div class="index-items index-items-0 active"></div>
+            <div class="index-items index-items-1"></div>
+            <div class="index-items index-items-2"></div>
+            <div class="index-items index-items-3"></div>
+            <div class="index-items index-items-4"></div>
+        </div>
+    </div>
+    <script src="index.js"></script>
+    <div class="container-catelogue">
+        <h1 class="container-product"><span>PRODUCTS</span></h1>
+        <div class="grid">
+            <div class="grid__row">
+
+                <script src="catelogue.js"></script>
+                <div class="grid__column_8">
+
+                    <h2 id="best_sellers"><span>BEST SELLERS</span></h2>
+                    <div class="home-product">
+                        <div class="grid__row-2">
+                            <div class="grid__column_25">
+                                <!-- product item -->
+                                <a class="home-product-item" href="">
+                                    <div class="home-product-item-img" style="background-image: url(https://down-vn.img.susercontent.com/file/vn-11134207-7r98o-lmr62xc4edwf11_tn);"></div>
+                                    <h4 class="home-product-item-name">Govee RGBIC Night Light H6057 </h4>
+                                    <div class="home-product-item-price">
+                                        <span class="home-product-item-price-old">147.35$</span>
+                                        <span class="home-product-item-price-current">117.67$</span>
+                                    </div>
+                                    <div class="home-product-action">
+                                        <span class="home-product-rating">
+                                            <i class=" fa-solid fa-star"></i>
+                                            <i class=" fa-solid fa-star"></i>
+                                            <i class=" fa-solid fa-star"></i>
+                                            <i class=" fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star-half-stroke"></i>
+                                        </span>
+
+                                        <button class="home-product-add">Buy</button>
+                                    </div>
+                                    <div class="home-product-item-favourite">
+                                        <i class="fa-solid fa-check"></i>
+                                        Favourite
+                                    </div>
+                                    <div class="home-product-item-sale_off">
+                                        <span class="home-product-item-sale_off-percent">10%</span>
+                                        <span class="home-product-item-sale_off-label">Sale</span>
+                                    </div>
+                                </a>
+
+                            </div>
+                            <div class="grid__column_25">
+                                <!-- product item -->
+                                <a class="home-product-item" href="">
+                                    <div class="home-product-item-img" style="background-image: url(https://img.lazcdn.com/g/p/2934fb6f215310be6622221ef9d783bd.jpg_720x720q80.jpg);"></div>
+                                    <h4 class="home-product-item-name"> Govee DreamView T1 Pro Ambilight TV Light (Immersion Kits)</h4>
+                                    <div class="home-product-item-price">
+                                        <span class="home-product-item-price-old">192.84$</span>
+                                        <span class="home-product-item-price-current">179.73$</span>
+                                    </div>
+                                    <div class="home-product-action">
+                                        <span class="home-product-rating">
+                                            <i class=" fa-solid fa-star"></i>
+                                            <i class=" fa-solid fa-star"></i>
+                                            <i class=" fa-solid fa-star"></i>
+                                            <i class=" fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star-half-stroke"></i>
+                                        </span>
+
+                                        <button class="home-product-add">BUY</button>
+                                    </div>
+                                    <div class="home-product-item-favourite">
+                                        <i class="fa-solid fa-check"></i>
+                                        Favourite
+                                    </div>
+                                    <div class="home-product-item-sale_off">
+                                        <span class="home-product-item-sale_off-percent">10%</span>
+                                        <span class="home-product-item-sale_off-label">Sale</span>
+                                    </div>
+                                </a>
+
+                            </div>
+                            <div class="grid__column_25">
+                                <!-- product item -->
+                                <a class="home-product-item" href="">
+                                    <div class="home-product-item-img" style="background-image: url(https://images-na.ssl-images-amazon.com/images/I/41yGZsI-ccL.jpg);"></div>
+                                    <h4 class="home-product-item-name">GE Classic 12-Pack 65 W Equivalent Dimmable Warm White R30 LED Light Fixture Light Bulbs</h4>
+                                    <div class="home-product-item-price">
+                                        <span class="home-product-item-price-old">135,34$</span>
+                                        <span class="home-product-item-price-current">100,36$</span>
+                                    </div>
+                                    <div class="home-product-action">
+                                        <span class="home-product-rating">
+                                            <i class=" fa-solid fa-star"></i>
+                                            <i class=" fa-solid fa-star"></i>
+                                            <i class=" fa-solid fa-star"></i>
+                                            <i class=" fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star-half-stroke"></i>
+                                        </span>
+
+                                        <button class="home-product-add">BUY</button>
+                                    </div>
+                                    <div class="home-product-item-favourite">
+                                        <i class="fa-solid fa-check"></i>
+                                        Favourite
+                                    </div>
+                                    <div class="home-product-item-sale_off">
+                                        <span class="home-product-item-sale_off-percent">29%</span>
+                                        <span class="home-product-item-sale_off-label">Sale</span>
+                                    </div>
+                                </a>
+
+                            </div>
+                            <div class="grid__column_25">
+                                <!-- product item -->
+                                <a class="home-product-item" href="">
+                                    <div class="home-product-item-img" style="background-image: url(https://down-vn.img.susercontent.com/file/vn-11134207-7r98o-lu6gujyc2sk10a_tn);"></div>
+                                    <h4 class="home-product-item-name">Rang Dong LED Bulb </h4>
+                                    <div class="home-product-item-price">
+                                        <span class="home-product-item-price-old">5.9$</span>
+                                        <span class="home-product-item-price-current">5$</span>
+                                    </div>
+                                    <div class="home-product-action">
+                                        <span class="home-product-rating">
+                                            <i class=" fa-solid fa-star"></i>
+                                            <i class=" fa-solid fa-star"></i>
+                                            <i class=" fa-solid fa-star"></i>
+                                            <i class=" fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star-half-stroke"></i>
+                                        </span>
+
+                                        <button class="home-product-add">BUY</button>
+                                    </div>
+                                    <div class="home-product-item-favourite">
+                                        <i class="fa-solid fa-check"></i>
+                                        Favourite
+                                    </div>
+                                    <div class="home-product-item-sale_off">
+                                        <span class="home-product-item-sale_off-percent">16%</span>
+                                        <span class="home-product-item-sale_off-label">Sale</span>
+                                    </div>
+                                </a>
+
+                            </div>
+                        </div>
+                    </div>
+                    <h2 id="just_for_you"><span>JUST FOR YOU</span></h2>
+                    <div class="home-product">
+                        <div class="grid__row-2">
+                            <div class="grid__column_25">
+                                <!-- product item -->
+                                <a class="home-product-item" href="">
+                                    <div class="home-product-item-img" style="background-image: url(https://img.lazcdn.com/g/p/4d7f68ad0f7a5f3dc49a3bc21eb25f9b.jpg_120x120q80.jpg_.webp);"></div>
+                                    <h4 class="home-product-item-name">Govee Envisual TV Backlight T2 H605C (55-65"): Elevate Your Movie-Watching Experience</h4>
+                                    <div class="home-product-item-price">
+                                        <span class="home-product-item-price-old">268.17$</span>
+                                        <span class="home-product-item-price-current">226.91$</span>
+                                    </div>
+                                    <div class="home-product-action">
+                                        <span class="home-product-rating">
+                                            <i class=" fa-solid fa-star"></i>
+                                            <i class=" fa-solid fa-star"></i>
+                                            <i class=" fa-solid fa-star"></i>
+                                            <i class=" fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star-half-stroke"></i>
+                                        </span>
+
+                                        <button class="home-product-add">BUY</button>
+                                    </div>
+                                    <div class="home-product-item-favourite">
+                                        <i class="fa-solid fa-check"></i>
+                                        Favourite
+                                    </div>
+                                    <div class="home-product-item-sale_off">
+                                        <span class="home-product-item-sale_off-percent">15%</span>
+                                        <span class="home-product-item-sale_off-label">Sale</span>
+                                    </div>
+                                </a>
+
+                            </div>
+                            <div class="grid__column_25">
+                                <!-- product item -->
+                                <a class="home-product-item" href="">
+                                    <div class="home-product-item-img" style="background-image: url(https://i.ebayimg.com/images/g/o2AAAOSwa7JllLfY/s-l1600.webp);"></div>
+                                    <h4 class="home-product-item-name">Viribright 8W (40W) LED Light Bulb A19 E26 600 lumens MERCURY FREE</h4>
+                                    <div class="home-product-item-price">
+                                        <span class="home-product-item-price-old">12.99$</span>
+                                        <span class="home-product-item-price-current">10$</span>
+                                    </div>
+                                    <div class="home-product-action">
+                                        <span class="home-product-rating">
+                                            <i class=" fa-solid fa-star"></i>
+                                            <i class=" fa-solid fa-star"></i>
+                                            <i class=" fa-solid fa-star"></i>
+                                            <i class=" fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star-half-stroke"></i>
+                                        </span>
+
+                                        <button class="home-product-add">BUY</button>
+                                    </div>
+                                    <div class="home-product-item-favourite">
+                                        <i class="fa-solid fa-check"></i>
+                                        Favourite
+                                    </div>
+                                    <div class="home-product-item-sale_off">
+                                        <span class="home-product-item-sale_off-percent">15%</span>
+                                        <span class="home-product-item-sale_off-label">Sale</span>
+                                    </div>
+                                </a>
+
+                            </div>
+                            <div class="grid__column_25">
+                                <!-- product item -->
+                                <a class="home-product-item" href="">
+                                    <div class="home-product-item-img" style="background-image: url(https://down-vn.img.susercontent.com/file/vn-11134207-7r98o-ls4ewupq2h09a6_tn);"></div>
+                                    <h4 class="home-product-item-name">GE Lighting Smart Plug</h4>
+                                    <div class="home-product-item-price">
+                                        <span class="home-product-item-price-old">3.5$</span>
+                                        <span class="home-product-item-price-current">3$</span>
+                                    </div>
+                                    <div class="home-product-action">
+                                        <span class="home-product-rating">
+                                            <i class=" fa-solid fa-star"></i>
+                                            <i class=" fa-solid fa-star"></i>
+                                            <i class=" fa-solid fa-star"></i>
+                                            <i class=" fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star-half-stroke"></i>
+                                        </span>
+
+                                        <button class="home-product-add">BUY</button>
+                                    </div>
+                                    <div class="home-product-item-favourite">
+                                        <i class="fa-solid fa-check"></i>
+                                        Favourite
+                                    </div>
+                                    <div class="home-product-item-sale_off">
+                                        <span class="home-product-item-sale_off-percent">17%</span>
+                                        <span class="home-product-item-sale_off-label">Sale</span>
+                                    </div>
+                                </a>
+
+                            </div>
+                            <div class="grid__column_25">
+                                <!-- product item -->
+                                <a class="home-product-item" href="">
+                                    <div class="home-product-item-img" style="background-image: url(https://img.lazcdn.com/g/p/2934fb6f215310be6622221ef9d783bd.jpg_720x720q80.jpg);"></div>
+                                    <h4 class="home-product-item-name">Govee DreamView T1 Pro Ambilight TV Light (Immersion Kits)</h4>
+                                    <div class="home-product-item-price">
+                                        <span class="home-product-item-price-old">192,84$</span>
+                                        <span class="home-product-item-price-current">179,73$</span>
+                                    </div>
+                                    <div class="home-product-action">
+                                        <span class="home-product-rating">
+                                            <i class=" fa-solid fa-star"></i>
+                                            <i class=" fa-solid fa-star"></i>
+                                            <i class=" fa-solid fa-star"></i>
+                                            <i class=" fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star-half-stroke"></i>
+                                        </span>
+
+                                        <button class="home-product-add">BUY</button>
+                                    </div>
+                                    <div class="home-product-item-favourite">
+                                        <i class="fa-solid fa-check"></i>
+                                        Favourite
+                                    </div>
+                                    <div class="home-product-item-sale_off">
+                                        <span class="home-product-item-sale_off-percent">10%</span>
+                                        <span class="home-product-item-sale_off-label">Sale</span>
+                                    </div>
+                                </a>
+
+                            </div>
+                        </div>
+                    </div>
+                    <h2 id="new_products"><span>NEW PRODUCTS</span></h2>
+                    <div class="home-product">
+                        <div class="grid__row-2">
+                            <div class="grid__column_25">
+                                <!-- product item -->
+                                <a class="home-product-item" href="">
+                                    <div class="home-product-item-img" style="background-image: url(https://image.anhducdigital.vn/hightech/lighting/outdoor-lights/h7060/govee-rgbic-flood-lights-outdoor-h7060-500x500.jpg);"></div>
+                                    <h4 class="home-product-item-name">Govee RGBIC Flood Lights Outdoor H7060</h4>
+                                    <div class="home-product-item-price">
+                                        <span class="home-product-item-price-old">257,85$</span>
+                                        <!-- <span class="home-product-item-price-current">179,73$</span> -->
+                                    </div>
+                                    <div class="home-product-action">
+                                        <span class="home-product-rating">
+                                            <i class=" fa-solid fa-star"></i>
+                                            <i class=" fa-solid fa-star"></i>
+                                            <i class=" fa-solid fa-star"></i>
+                                            <i class=" fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star-half-stroke"></i>
+                                        </span>
+
+                                        <button class="home-product-add">BUY</button>
+                                    </div>
+                                    <div class="home-product-item-favourite">
+                                        <i class="fa-solid fa-check"></i>
+                                        Favourite
+                                    </div>
+                                    <div class="home-product-item-sale_off">
+                                        <span class="home-product-item-sale_off-percent"></span>
+                                        <span class="home-product-item-sale_off-label">New</span>
+                                    </div>
+                                </a>
+
+                            </div>
+                            <div class="grid__column_25">
+                                <!-- product item -->
+                                <a class="home-product-item" href="">
+                                    <div class="home-product-item-img" style="background-image: url(https://img.lazcdn.com/g/p/4d7f68ad0f7a5f3dc49a3bc21eb25f9b.jpg_120x120q80.jpg_.webp);"></div>
+                                    <h4 class="home-product-item-name">Govee Envisual TV Backlight T2 H605C (55-65"): Elevate Your Movie-Watching Experience</h4>
+                                    <div class="home-product-item-price">
+                                        <span class="home-product-item-price-old">268,17$</span>
+                                        <!-- <span class="home-product-item-price-current">179,73$</span> -->
+                                    </div>
+                                    <div class="home-product-action">
+                                        <span class="home-product-rating">
+                                            <i class=" fa-solid fa-star"></i>
+                                            <i class=" fa-solid fa-star"></i>
+                                            <i class=" fa-solid fa-star"></i>
+                                            <i class=" fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star-half-stroke"></i>
+                                        </span>
+
+                                        <button class="home-product-add">BUY</button>
+                                    </div>
+                                    <div class="home-product-item-favourite">
+                                        <i class="fa-solid fa-check"></i>
+                                        Favourite
+                                    </div>
+                                    <div class="home-product-item-sale_off">
+                                        <span class="home-product-item-sale_off-percent"></span>
+                                        <span class="home-product-item-sale_off-label">New</span>
+                                    </div>
+                                </a>
+
+                            </div>
+                            <div class="grid__column_25">
+                                <!-- product item -->
+                                <a class="home-product-item" href="">
+                                    <div class="home-product-item-img" style="background-image: url(https://ple.vn/dandung/images/virtuemart/product/81095-rangdong-light.jpg);"></div>
+                                    <h4 class="home-product-item-name">Rang Dong D LN19L 490/40W.RF: Smart Ceiling LED Lamp</h4>
+                                    <div class="home-product-item-price">
+                                        <span class="home-product-item-price-old">82,25$</span>
+                                        <!-- <span class="home-product-item-price-current">179,73$</span> -->
+                                    </div>
+                                    <div class="home-product-action">
+                                        <span class="home-product-rating">
+                                            <i class=" fa-solid fa-star"></i>
+                                            <i class=" fa-solid fa-star"></i>
+                                            <i class=" fa-solid fa-star"></i>
+                                            <i class=" fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star-half-stroke"></i>
+                                        </span>
+
+                                        <button class="home-product-add">BUY</button>
+                                    </div>
+                                    <div class="home-product-item-favourite">
+                                        <i class="fa-solid fa-check"></i>
+                                        Favourite
+                                    </div>
+                                    <div class="home-product-item-sale_off">
+                                        <span class="home-product-item-sale_off-percent"></span>
+                                        <span class="home-product-item-sale_off-label">New</span>
+                                    </div>
+                                </a>
+
+                            </div>
+                            <div class="grid__column_25">
+                                <!-- product item -->
+                                <a class="home-product-item" href="">
+                                    <div class="home-product-item-img" style="background-image: url(https://i.ebayimg.com/images/g/o2AAAOSwa7JllLfY/s-l1600.webp);"></div>
+                                    <h4 class="home-product-item-name">Viribright 8W (40W) LED Light Bulb A19 E26 600 lumens MERCURY FREE</h4>
+                                    <div class="home-product-item-price">
+                                        <span class="home-product-item-price-old">12,99$</span>
+                                        <!-- <span class="home-product-item-price-current">179,73$</span> -->
+                                    </div>
+                                    <div class="home-product-action">
+                                        <span class="home-product-rating">
+                                            <i class=" fa-solid fa-star"></i>
+                                            <i class=" fa-solid fa-star"></i>
+                                            <i class=" fa-solid fa-star"></i>
+                                            <i class=" fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star-half-stroke"></i>
+                                        </span>
+
+                                        <button class="home-product-add">BUY</button>
+                                    </div>
+                                    <div class="home-product-item-favourite">
+                                        <i class="fa-solid fa-check"></i>
+                                        Favourite
+                                    </div>
+                                    <div class="home-product-item-sale_off">
+                                        <span class="home-product-item-sale_off-percent"></span>
+                                        <span class="home-product-item-sale_off-label">New</span>
+                                    </div>
+                                </a>
+
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <script>
+                        document.addEventListener('DOMContentLoaded', function () {
+                            const addButtons = document.querySelectorAll('.home-product-add');
+
+                            addButtons.forEach(button => {
+                                button.addEventListener('click', function (event) {
+                                    event.preventDefault();
+                                    const productElement = this.closest('.home-product-item');
+                                    const productName = productElement.querySelector('.home-product-item-name').innerText;
+                                    const productPrice = productElement.querySelector('.home-product-item-price-current').innerText;
+                                    const productImg = productElement.querySelector('.home-product-item-img').style.backgroundImage.replace('url("', '').replace('")', '');
+
+                                    addToCart(productName, productPrice, productImg);
+                                });
+                            });
+
+                            function addToCart(name, price, img) {
+                                let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+                                const existingProduct = cart.find(item => item.name === name);
+
+                                if (existingProduct) {
+                                    existingProduct.quantity += 1;
+                                } else {
+
+                                    cart.push({ name, price, img, quantity: 1 });
+                                }
+
+
+                                localStorage.setItem('cart', JSON.stringify(cart));
+                                alert('Product added to cart!');
+                            }
+                        });
+
+                    </script>
+                    <script>
+                        document.querySelectorAll('.catelogue-item-link').forEach(anchor => {
+                            anchor.addEventListener('click', function (e) {
+                                e.preventDefault();
+                                let targetId = this.getAttribute('href');
+                                let targetElement = document.querySelector(targetId);
+                                if (targetElement) {
+                                    let targetOffset = targetElement.offsetTop;
+                                    let duration = 500;
+                                    let startingY = window.pageYOffset;
+                                    let diff = targetOffset - startingY + 280;
+                                    let start;
+
+                                    function step(timestamp) {
+                                        if (!start) start = timestamp;
+                                        let progress = timestamp - start;
+                                        window.scrollTo(0, startingY + diff * (progress / duration));
+                                        if (progress < duration) {
+                                            window.requestAnimationFrame(step);
+                                        }
+                                    }
+
+                                    window.requestAnimationFrame(step);
+                                }
+                            });
+                        });
+                    </script>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- NUMBER  -->
+    <section class="number">
+        <div class="number__content">
+            <div class="number__item">
+                <p class="counter">38</p>
+                <p>Product</p>
+            </div>
+            <div class="number__item">
+                <p class="counter">5424</p>
+                <p>Happy Client</p>
+            </div>
+            <div class="number__item">
+                <p class="counter">7</p>
+                <p>Local Brand</p>
+            </div>
+            <div class="number__item">
+                <p class="counter">3</p>
+                <p>Branch</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS  -->
+    <section class="testimonials">
+        <h2>TESTIMONIALS</h2>
+        <div class="testimonials__content">
+            <div class="item">
+                <p>
+                    <i class="fa-solid fa-quote-left"></i>Shop House desires to satisfy every customer with
+                    high-quality products from many famous brands worldwide. Your satisfaction is our pleasure.<i class="fa-solid fa-quote-right"></i>
+                </p>
+                <p>Đinh Xuân Việt</p>
+            </div>
+            <div class="item">
+                <p>
+                    <i class="fa-solid fa-quote-left"></i>Shop House is the most prestigious LED shop today, each
+                    product is carefully selected and high quality.<i class="fa-solid fa-quote-right"></i>
+                </p>
+                <p>Ngô Thị Lan Anh</p>
+            </div>
+        </div>
+    </section>
+
+
+
+    <footer>
+        <div class="footer__main">
+            <div class="footer__item">
+                <h3>About Us</h3>
+                <p>Shop house is a store that sells the world's top-quality Computer.</p>
+                <blockquote>"Your satisfaction is our pleasure"</blockquote>
+                <div class="footer__social">
+                    <a href="https://www.facebook.com/profile.php?id=100045347233210&mibextid=LQQJ4d"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="https://www.facebook.com/profile.php?id=100045347233210&mibextid=LQQJ4d"><i class="fa-brands fa-google-plus-g"></i></a>
+                    <a href="https://www.facebook.com/profile.php?id=100045347233210&mibextid=LQQJ4d"><i class="fa-brands fa-twitter"></i></a>
+                </div>
+            </div>
+            <div class="footer__item">
+                <h3>Working Time</h3>
+                <div class="footer__time">
+                    <p>Monday</p>
+                    <p>9h30 - 18h30</p>
+                </div>
+                <div class="footer__time">
+                    <p>Tuesday</p>
+                    <p>9h30 - 18h30</p>
+                </div>
+                <div class="footer__time">
+                    <p>Wednesday</p>
+                    <p>9h30 - 18h30</p>
+                </div>
+                <div class="footer__time">
+                    <p>Thursday</p>
+                    <p>9h30 - 18h30</p>
+                </div>
+                <div class="footer__time">
+                    <p>Friday</p>
+                    <p>9h30 - 18h30</p>
+                </div>
+                <div class="footer__time">
+                    <p>Saturday</p>
+                    <p>9h30 - 18h30</p>
+                </div>
+                <div class="footer__time">
+                    <p>Sunday</p>
+                    <p>9h30 - 18h30</p>
+                </div>
+            </div>
+            <div class="footer__item">
+                <h3>Contact Us</h3>
+                <p>
+                    Hà Nội branch <br>(+84) 1234-5678 <br>
+                    <a href="mailto:xuanv319@gmail.com?subject = Feedback&body = Message" class="footer__item-link">
+                        <span>xuanviet319@gmail.com</span>
+                    </a>
+                </p>
+                <p>
+                    Hồ Chí Minh branch <br>(+84) 6666-8888 <br>
+                    <a href="mailto:xuanv319@gmail.com?subject = Feedback&body = Message" class="footer__item-link">
+                        <span>lanh2408@gmail.com</span>
+                    </a>
+                </p>
+                <p>
+                    Bắc Ninh branch <br>(213) 054-2004 <br>
+                    <a href="mailto:xuanv319@gmail.com?subject = Feedback&body = Message" class="footer__item-link">
+                        <span>viet25@gmail.com</span>
+                    </a>
+                </p>
+            </div>
+            <div class="footer__item">
+                <h3>Subscribe Us</h3>
+                <form class="footer__sub" action="#" id="signup" method="post">
+                    <div class="form-field">
+                        <input type="email" name="email" id="subscribe-email" placeholder="name@example.com" required><br>
+                        <small></small>
+                    </div>
+                    <button class="js-submit-subscribe" type="submit">Send</button>
+                </form>
+                <p>Sign up now to receive notifications as soon as a new product is added.</p>
+            </div>
+        </div>
+        <div class="footer__coppyright">
+            <p>&copy; Copyright 2024 | Design by <span>Xuân Việt</span></p>
+        </div>
+    </footer>
+</body>
+</html>
