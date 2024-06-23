@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout Page</title>
+    <link rel="stylesheet" href="thanhtoan.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Checkout</h2>
+        <form id="checkoutForm">
+            <div class="checkout-column">
+                <h3>Shipping Information</h3>
+                <label for="name" class="checkout-column-label-shipping"> Your Full Name</label>
+                <input type="text" id="name" name="name" required>
+                <span class="error" id="nameError">Please enter your full name</span>
+
+                <label for="address" class="checkout-column-label-shipping">Your Address</label>
+                <input type="text" id="address" name="address" required>
+                <span class="error" id="addressError">Please enter your address</span>
+
+                <label for="phone" class="checkout-column-label-shipping">Your Phone Number</label>
+                <input type="text" id="phone" name="phone" required>
+                <span class="error" id="phoneError">Please enter a valid phone number</span>
+            </div>
+
+            <div class="divider"></div>
+
+            <div class="checkout-column">
+                <h3>Payment Method</h3>
+                <label class="checkout-column-label-payment">
+                    <input type="radio" name="paymentMethod" value="creditCard" required>
+                    Credit Card
+                </label>
+                <label class="checkout-column-label-payment">
+                    <input type="radio" name="paymentMethod" value="bankTransfer" required>
+                    Bank Transfer
+                </label>
+                <label class="checkout-column-label-payment">
+                    <input type="radio" name="paymentMethod" value="eWallet" required>
+                    E-Wallet (PayPal, MoMo, ZaloPay)
+                </label>
+                <label class="checkout-column-label-payment">
+                    <input type="radio" name="paymentMethod" value="cod" required>
+                    Cash on Delivery (COD)
+                </label>
+
+                <div class="btn">
+                    <button type="submit" class="cancel">Cancel</button>
+                    <button type="submit" class="submit">Submit</button>
+                </div>
+            </div>
+
+
+        </form>
+    </div>
+<!--     <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const checkoutForm = document.getElementById('checkoutForm');
+            const cancelButton = document.querySelector('.cancel');
+            const submitButton = document.querySelector('.submit');
+
+            // Handle form submission
+            checkoutForm.addEventListener('submit', function (event) {
+                event.preventDefault(); // Prevent the default form submission
+
+                const formData = new FormData(checkoutForm);
+                const data = Object.fromEntries(formData.entries());
+
+                console.log('Form Data:', data);
+
+                // Here, you can handle form submission, like sending data to the server
+                // For example, using fetch to send data to the server
+                // fetch('/submit', {
+                //     method: 'POST',
+                //     headers: {
+                //         'Content-Type': 'application/json'
+                //     },
+                //     body: JSON.stringify(data)
+                // }).then(response => response.json())
+                //   .then(data => console.log('Success:', data))
+                //   .catch((error) => console.error('Error:', error));
+
+                // Alert to show that form has been submitted (for demonstration purposes)
+                alert('Form submitted successfully!');
+            });
+
+            // Handle cancel button click
+            cancelButton.addEventListener('click', function (event) {
+                event.preventDefault(); // Prevent the default form submission
+                if (confirm('Are you sure you want to cancel?')) {
+                    window.location.href = 'cart.html'; // Redirect to homepage or any other page
+                }
+            });
+        });
+
+    </script> -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const checkoutForm = document.getElementById('checkoutForm');
+            const cancelButton = document.querySelector('.cancel');
+            const submitButton = document.querySelector('.submit');
+            const nameInput = document.getElementById('name');
+            const addressInput = document.getElementById('address');
+            const paymentMethods = document.querySelectorAll('input[name="paymentMethod"]');
+            const paymentLabels = document.querySelectorAll('.checkout-column-label-payment');
+
+            function capitalizeWords(str) {
+                return str
+                    .split(/\s+/)
+                    .map(word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
+                    .join(' ');
+            }
+
+            function validateFormData(data) {
+                let isValid = true;
+
+                // Validate name
+                if (!data.name.trim()) {
+                    document.getElementById('nameError').style.display = 'inline';
+                    isValid = false;
+                } else {
+                    document.getElementById('nameError').style.display = 'none';
+                }
+
+                // Validate address
+                if (!data.address.trim()) {
+                    document.getElementById('addressError').style.display = 'inline';
+                    isValid = false;
+                } else {
+                    document.getElementById('addressError').style.display = 'none';
+                }
+
+                // Validate phone (simple validation for example purposes)
+                const phonePattern = /^[0-9]{10}$/;
+                if (!data.phone.trim() || !phonePattern.test(data.phone)) {
+                    document.getElementById('phoneError').style.display = 'inline';
+                    isValid = false;
+                } else {
+                    document.getElementById('phoneError').style.display = 'none';
+                }
+
+                return isValid;
+            }
+
+            nameInput.addEventListener('input', function () {
+                let cursorPosition = nameInput.selectionStart;
+                nameInput.value = capitalizeWords(nameInput.value);
+                nameInput.selectionStart = cursorPosition;
+                nameInput.selectionEnd = cursorPosition;
+            });
+
+            addressInput.addEventListener('input', function () {
+                let cursorPosition = addressInput.selectionStart;
+                addressInput.value = capitalizeWords(addressInput.value);
+                addressInput.selectionStart = cursorPosition;
+                addressInput.selectionEnd = cursorPosition;
+            });
+
+            paymentMethods.forEach((method) => {
+                method.addEventListener('change', function () {
+                    paymentLabels.forEach((label) => {
+                        label.classList.remove('payment-selected', 'payment-deselected');
+                        if (label.querySelector('input').checked) {
+                            label.classList.add('payment-selected');
+                        } else {
+                            label.classList.add('payment-deselected');
+                        }
+                    });
+                });
+            });
+
+            checkoutForm.addEventListener('submit', function (event) {
+                // Prevent the default form submission
+                event.preventDefault();
+
+                const formData = new FormData(checkoutForm);
+                const data = Object.fromEntries(formData.entries());
+
+                if (validateFormData(data)) {
+                    // Show success message
+                    alert('Form submitted successfully!');
+
+                    // Redirect to home page (change the URL as per your requirement)
+                    window.location.href = 'index.html';
+                } else {
+                    alert('Please correct the errors in the form.');
+                }
+            });
+
+            cancelButton.addEventListener('click', function (event) {
+                event.preventDefault();
+                if (confirm('Are you sure you want to cancel?')) {
+                    window.location.href = 'cart.html';
+                }
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,126 @@
+﻿<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Login on Web</title>
+    <link rel="stylesheet" href="Login.css">
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="title-text">
+            <div class="title login">LOGIN </div>
+            <div class="title signup">REGISTER </div>
+        </div>
+        <div class="form-container">
+            <div class="slide-controls">
+                <input type="radio" name="slide" id="login" checked />
+                <input type="radio" name="slide" id="signup" />
+                <label for="login" class="slide login">Log in</label>
+                <label for="signup" class="slide signup">Register</label>
+                <div class="slider-tab"></div>
+            </div>
+            <div class="form-inner">
+                <form action="#" class="login" id="loginForm">
+                    <div class="field">
+                        <input type="text" placeholder="Email Address" required />
+                    </div>
+                    <div class="field">
+                        <input type="password" placeholder="Password" required />
+                    </div>
+                    <div class="pass-link">
+                        <a href="#">Forgot password</a>
+                    </div>
+                    <div class="field btn">
+                        <div class="btn-layer"></div>
+                        <input type="submit" value="Login" />
+                    </div>
+                    <div class="signup-link">
+                        Not a member ?
+                        <a href="">Register now</a>
+                    </div>
+                </form>
+                <form action="#" class="signup" id="signupForm">
+                    <div class="field">
+                        <input type="text" placeholder="Email Address" required />
+                    </div>
+                    <div class="field">
+                        <input type="password" placeholder="Password" required />
+                    </div>
+                    <div class="field">
+                        <input type="password" placeholder="Confirm Pasword" required />
+                    </div>
+                    <div class="field btn">
+                        <div class="btn-layer">
+                        </div>
+                        <input type="submit" value="Sign up" />
+
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        console.log("DOM fully loaded and parsed");
+
+        const loginForm = document.getElementById("loginForm");
+        const signupForm = document.getElementById("signupForm");
+
+        if (loginForm) {
+            console.log("Login form found");
+            loginForm.addEventListener("submit", function (event) {
+                event.preventDefault();
+                console.log("Login form submitted");
+
+                // Lấy giá trị của các trường input
+                const email = loginForm.querySelector('input[type="text"]').value;
+                const password = loginForm.querySelector('input[type="password"]').value;
+
+                // Logic xác thực đăng nhập
+                if (email === "user@example.com" && password === "password") {
+                    console.log("Login successful");
+                    // Chuyển hướng đến trang chủ sau khi đăng nhập thành công
+                    window.location.href = "index.html";
+                } else {
+                    console.log("Login failed");
+                    alert("Invalid email or password");
+                }
+            });
+        } else {
+            console.log("Login form not found");
+        }
+
+        if (signupForm) {
+            console.log("Signup form found");
+            signupForm.addEventListener("submit", function (event) {
+                event.preventDefault();
+                console.log("Signup form submitted");
+
+                // Lấy giá trị của các trường input
+                const email = signupForm.querySelector('input[type="text"]').value;
+                const password = signupForm.querySelector('input[type="password"]').value;
+                const confirmPassword = signupForm.querySelector('input[placeholder="Confirm Password"]').value;
+
+                // Logic xử lý đăng ký
+                if (password === confirmPassword) {
+                    console.log("Signup successful");
+                    // Lưu thông tin người dùng và chuyển hướng đến trang chủ sau khi đăng ký thành công
+                    // Ví dụ: localStorage.setItem("user", email);
+                    window.location.href = "index.html";
+                } else {
+                    console.log("Signup failed");
+                    alert("Passwords do not match");
+                }
+            });
+        } else {
+            console.log("Signup form not found");
+        }
+    });
+</script>
+</script>
+<script src="Login.js"></script>
+
+</html>
